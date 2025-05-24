@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas - Mi Portafolio Digital</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #e3ecf4f3;
+            color: #2c3e50;
+        }
+        nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: #F8F9FA;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #E9ECEF;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            border: 1px solid #E9ECEF;
+        }
+        h1 {
+            color: #495057;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+        .parcial-section {
+            background-color: #E9ECEF;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #3498db;
+        }
+        .parcial-section h2 {
+            color: #3498db;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        ul.tareas-list {
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+        ul.tareas-list li {
+            margin-bottom: 10px;
+        }
+        .add-tarea-form {
+            margin-top: 15px;
+        }
+        .add-tarea-form input[type="text"] {
+            padding: 7px;
+            border-radius: 4px;
+            border: 1px solid #b0b8be;
+            width: 70%;
+            margin-right: 10px;
+        }
+        .add-tarea-form button {
+            padding: 7px 15px;
+            border-radius: 4px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .add-tarea-form button:hover {
+            background-color: #217dbb;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="acerca.html">Acerca de</a>
+        <a href="tareas.html">Tareas</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <h1>Depósito de Tareas</h1>
+        
+        <div class="parcial-section" id="parcial1">
+            <h2>Primer Parcial</h2>
+            <ul class="tareas-list" id="lista-parcial1">
+                <!-- Aquí se mostrarán las tareas del primer parcial -->
+            </ul>
+            <form class="add-tarea-form" onsubmit="agregarTarea(event, 1)">
+                <input type="text" placeholder="Escribe tu tarea del primer parcial..." id="input-parcial1" required>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+        
+        <div class="parcial-section" id="parcial2">
+            <h2>Segundo Parcial</h2>
+            <ul class="tareas-list" id="lista-parcial2">
+                <!-- Aquí se mostrarán las tareas del segundo parcial -->
+            </ul>
+            <form class="add-tarea-form" onsubmit="agregarTarea(event, 2)">
+                <input type="text" placeholder="Escribe tu tarea del segundo parcial..." id="input-parcial2" required>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+        
+        <div class="parcial-section" id="parcial3">
+            <h2>Tercer Parcial</h2>
+            <ul class="tareas-list" id="lista-parcial3">
+                <!-- Aquí se mostrarán las tareas del tercer parcial -->
+            </ul>
+            <form class="add-tarea-form" onsubmit="agregarTarea(event, 3)">
+                <input type="text" placeholder="Escribe tu tarea del tercer parcial..." id="input-parcial3" required>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+        
+        <div class="parcial-section" id="parcial4">
+            <h2>Cuarto Parcial</h2>
+            <ul class="tareas-list" id="lista-parcial4">
+                <!-- Aquí se mostrarán las tareas del cuarto parcial -->
+            </ul>
+            <form class="add-tarea-form" onsubmit="agregarTarea(event, 4)">
+                <input type="text" placeholder="Escribe tu tarea del cuarto parcial..." id="input-parcial4" required>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Cultura Digital II - Instituto Libertad. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Permite agregar tareas a cada parcial (solo en el navegador, no se guarda al recargar)
+        function agregarTarea(event, parcial) {
+            event.preventDefault();
+            const input = document.getElementById('input-parcial' + parcial);
+            const lista = document.getElementById('lista-parcial' + parcial);
+            if (input.value.trim() !== "") {
+                const li = document.createElement('li');
+                li.textContent = input.value;
+                lista.appendChild(li);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

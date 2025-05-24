@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca - Mi Portafolio Digital</title>
+    <style>
+       
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #e3ecf4f3;
+            color: #2c3e50;
+        }
+       
+        /* Barra de navegación */
+        nav {
+             background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+       
+        nav a {
+            color: #F8F9FA;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+       
+        nav a:hover {
+            color: #E9ECEF;
+            text-decoration: underline;
+        }
+       
+        /* Contenedor principal */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            border: 1px solid #E9ECEF;
+        }
+       
+        /* Encabezado */
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+       
+        .header-text {
+            flex: 1;
+            padding-right: 30px;
+            min-width: 300px;
+        }
+       
+        .header-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 1px solid #DEE2E6;
+        }
+       
+        h1 {
+            color: #495057;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+       
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #6C757D;
+            line-height: 1.7;
+        }
+       
+        /* Sección de información */
+        .info-section {
+            background-color: #E9ECEF;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #CED4DA;
+        }
+       
+        .info-section h2 {
+            color: #495057;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+       
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+            }
+            .header-text {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .header-image {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="acerca.html">Acerca de</a>
+        <a href="tareas.html">Tareas</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-text">
+                <h1>¿Quién soy?</h1>
+                <p>Mi nombre es Omar Reynaga y tengo 16 años, soy un aprendiz de la programación.</p>
+               
+              <p>Me entusiasma mucho esta materia al saber que puedo generar bastante dinero si hago lo correcto</p>
+                    </ul>
+                </div>
+            </div>
+            <img src="yo.jpg.webp" alt="este soy yo" class="header-image">
+        </div>
+    </div>
+</body>
+</html>
