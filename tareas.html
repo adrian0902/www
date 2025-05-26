@@ -67,28 +67,20 @@
         ul.tareas-list li {
             margin-bottom: 10px;
         }
-        .add-tarea-form {
-            margin-top: 15px;
-        }
-        .add-tarea-form input[type="text"] {
-            padding: 7px;
-            border-radius: 4px;
-            border: 1px solid #b0b8be;
-            width: 70%;
-            margin-right: 10px;
-        }
-        .add-tarea-form button {
-            padding: 7px 15px;
-            border-radius: 4px;
-            border: none;
-            background-color: #3498db;
-            color: white;
-            font-weight: bold;
+        .pdf-link {
+            color: #3498db;
+            text-decoration: underline;
             cursor: pointer;
-            transition: background 0.3s;
         }
-        .add-tarea-form button:hover {
-            background-color: #217dbb;
+        .pdf-viewer {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #b0b8be;
+            margin-top: 15px;
+            display: none;
+        }
+        .pdf-viewer.active {
+            display: block;
         }
         footer {
             background-color: #2c3e50;
@@ -111,48 +103,54 @@
     <div class="container">
         <h1>Depósito de Tareas</h1>
         
+        <!-- 4 Parciales, 4 tareas por parcial = 16 tareas -->
         <div class="parcial-section" id="parcial1">
             <h2>Primer Parcial</h2>
             <ul class="tareas-list" id="lista-parcial1">
-                <!-- Aquí se mostrarán las tareas del primer parcial -->
+                <li><a href="inv_explicativa_y_aplicada.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/inv_explicativa_y_aplicada.pdf', 1)">Tarea 1:Investigación explicativa y aplicada</a></li>
+                <li><a href="tipos_de_investigación.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/tipos_de_investigación.pdf', 1)">Tarea 2:Tipos de investigación </a></li>
+                <li>
+  Tarea 3: Uso de IAs
+  <br>
+  <a href="pdfs/ojo_de_rah.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/ojo_de_rah.pdf', 1)">Parte 1</a> |
+ <a href="pdfs/cultura_digital_presentacion.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/cultura_digital_presentacion.pdf', 1)">Parte 2</a>
+</li>
+                <li><a href="pdfs/color .pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/color.pdf', 1)">Tarea 4: Teoria del color</a></li>
             </ul>
-            <form class="add-tarea-form" onsubmit="agregarTarea(event, 1)">
-                <input type="text" placeholder="Escribe tu tarea del primer parcial..." id="input-parcial1" required>
-                <button type="submit">Agregar</button>
-            </form>
+            <iframe class="pdf-viewer" id="viewer-parcial1"></iframe>
         </div>
         
         <div class="parcial-section" id="parcial2">
             <h2>Segundo Parcial</h2>
             <ul class="tareas-list" id="lista-parcial2">
-                <!-- Aquí se mostrarán las tareas del segundo parcial -->
+                <li><a href="pdfs/parcial2-tarea1.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial2-tarea1.pdf', 2)">Tarea 1: Nombre del archivo 1</a></li>
+                <li><a href="pdfs/parcial2-tarea2.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial2-tarea2.pdf', 2)">Tarea 2: Nombre del archivo 2</a></li>
+                <li><a href="pdfs/parcial2-tarea3.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial2-tarea3.pdf', 2)">Tarea 3: Nombre del archivo 3</a></li>
+                <li><a href="pdfs/parcial2-tarea4.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial2-tarea4.pdf', 2)">Tarea 4: Nombre del archivo 4</a></li>
             </ul>
-            <form class="add-tarea-form" onsubmit="agregarTarea(event, 2)">
-                <input type="text" placeholder="Escribe tu tarea del segundo parcial..." id="input-parcial2" required>
-                <button type="submit">Agregar</button>
-            </form>
+            <iframe class="pdf-viewer" id="viewer-parcial2"></iframe>
         </div>
         
         <div class="parcial-section" id="parcial3">
             <h2>Tercer Parcial</h2>
             <ul class="tareas-list" id="lista-parcial3">
-                <!-- Aquí se mostrarán las tareas del tercer parcial -->
+                <li><a href="pdfs/parcial3-tarea1.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial3-tarea1.pdf', 3)">Tarea 1: Nombre del archivo 1</a></li>
+                <li><a href="pdfs/parcial3-tarea2.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial3-tarea2.pdf', 3)">Tarea 2: Nombre del archivo 2</a></li>
+                <li><a href="pdfs/parcial3-tarea3.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial3-tarea3.pdf', 3)">Tarea 3: Nombre del archivo 3</a></li>
+                <li><a href="pdfs/parcial3-tarea4.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial3-tarea4.pdf', 3)">Tarea 4: Nombre del archivo 4</a></li>
             </ul>
-            <form class="add-tarea-form" onsubmit="agregarTarea(event, 3)">
-                <input type="text" placeholder="Escribe tu tarea del tercer parcial..." id="input-parcial3" required>
-                <button type="submit">Agregar</button>
-            </form>
+            <iframe class="pdf-viewer" id="viewer-parcial3"></iframe>
         </div>
         
         <div class="parcial-section" id="parcial4">
             <h2>Cuarto Parcial</h2>
             <ul class="tareas-list" id="lista-parcial4">
-                <!-- Aquí se mostrarán las tareas del cuarto parcial -->
+                <li><a href="pdfs/parcial4-tarea1.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial4-tarea1.pdf', 4)">Tarea 1: Nombre del archivo 1</a></li>
+                <li><a href="pdfs/parcial4-tarea2.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial4-tarea2.pdf', 4)">Tarea 2: Nombre del archivo 2</a></li>
+                <li><a href="pdfs/parcial4-tarea3.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial4-tarea3.pdf', 4)">Tarea 3: Nombre del archivo 3</a></li>
+                <li><a href="pdfs/parcial4-tarea4.pdf" class="pdf-link" onclick="verPDF(event, 'pdfs/parcial4-tarea4.pdf', 4)">Tarea 4: Nombre del archivo 4</a></li>
             </ul>
-            <form class="add-tarea-form" onsubmit="agregarTarea(event, 4)">
-                <input type="text" placeholder="Escribe tu tarea del cuarto parcial..." id="input-parcial4" required>
-                <button type="submit">Agregar</button>
-            </form>
+            <iframe class="pdf-viewer" id="viewer-parcial4"></iframe>
         </div>
     </div>
 
@@ -161,17 +159,14 @@
     </footer>
 
     <script>
-        // Permite agregar tareas a cada parcial (solo en el navegador, no se guarda al recargar)
-        function agregarTarea(event, parcial) {
+        // Visualiza el PDF en el visor correspondiente
+        function verPDF(event, url, parcial) {
             event.preventDefault();
-            const input = document.getElementById('input-parcial' + parcial);
-            const lista = document.getElementById('lista-parcial' + parcial);
-            if (input.value.trim() !== "") {
-                const li = document.createElement('li');
-                li.textContent = input.value;
-                lista.appendChild(li);
-                input.value = "";
-            }
+            var viewer = document.getElementById('viewer-parcial' + parcial);
+            document.querySelectorAll('.pdf-viewer').forEach(v => v.classList.remove('active'));
+            viewer.src = url;
+            viewer.classList.add('active');
+            viewer.scrollIntoView({behavior: "smooth"});
         }
     </script>
 </body>
